@@ -1,5 +1,13 @@
 import React from "react"
 
+/**
+ * A search input box component with an icon and tooltip.
+ *
+ * @param {Object} props - The component props.
+ * @param {function} props.searchChange - Callback function triggered when the input value changes.
+ * @param {Object} [props.responsiveSearch] - Style object for responsive behavior.
+ * @returns {JSX.Element} The rendered SearchBox component.
+ */
 const SearchBox = ({ searchChange, responsiveSearch }) => {
   return (
     <div

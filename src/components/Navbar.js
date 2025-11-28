@@ -2,6 +2,16 @@ import React from "react"
 import Search from "./Search"
 import "../styles/SearchBarDesktopView.css"
 
+/**
+ * Navigation bar component.
+ * Displays the logo, a link to the map, and the search bar (on desktop view).
+ *
+ * @param {Object} props - The component props.
+ * @param {function} props.onSearchChange - Callback function triggered when the search input changes.
+ * @param {function} props.onMapClick - Callback function triggered when the Map link is clicked.
+ * @param {function} props.onLogoClick - Callback function triggered when the Logo is clicked.
+ * @returns {JSX.Element} The rendered Navbar component.
+ */
 const Navbar = ({ onSearchChange, onMapClick, onLogoClick }) => {
   return (
     <div className="header-items flex flex-wrap justify-between">

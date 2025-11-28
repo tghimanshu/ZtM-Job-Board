@@ -18,6 +18,10 @@ const isLocalhost = Boolean(
     )
 );
 
+/**
+ * Registers the service worker to serve assets from local cache.
+ * This is only enabled in production environments.
+ */
 export default function register() {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
@@ -52,6 +56,11 @@ export default function register() {
   }
 }
 
+/**
+ * Registers a valid service worker.
+ *
+ * @param {string} swUrl - The URL of the service worker.
+ */
 function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
@@ -81,6 +90,11 @@ function registerValidSW(swUrl) {
     });
 }
 
+/**
+ * Checks if the service worker is valid and reloads the page if not found or invalid.
+ *
+ * @param {string} swUrl - The URL of the service worker.
+ */
 function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
@@ -108,6 +122,9 @@ function checkValidServiceWorker(swUrl) {
     });
 }
 
+/**
+ * Unregisters the service worker.
+ */
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
