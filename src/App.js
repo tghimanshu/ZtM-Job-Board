@@ -29,6 +29,13 @@ const KEYS_TO_FILTERS = [
   "location.country"
 ]
 
+/**
+ * The main application component.
+ * Manages the state for search and map toggling.
+ * Displays the Navbar, Map, and the list of developers (BatchCards).
+ *
+ * @returns {JSX.Element} The rendered App component.
+ */
 function App() {
   const [searchfield, setSearchfield] = useState("")
 

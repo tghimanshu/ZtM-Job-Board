@@ -1,5 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 
+/**
+ * A simple Canvas component that draws a circle and a rectangle on mount.
+ *
+ * @returns {JSX.Element} The rendered canvas element.
+ */
 function Canvas() {
   const canvasRef = useRef(null);
 

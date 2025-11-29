@@ -13,6 +13,14 @@ const countryNamesAndNumOfDevsArr = Object.entries(countriesWithNumOfDevsObj)
 
 let centerLatLngArr = []
 
+/**
+ * A Map component that displays markers for countries where developers are located.
+ * Uses `react-leaflet` to render the map and `restcountries.eu` API (via `fetch`) to get country coordinates.
+ *
+ * @param {Object} props - The component props.
+ * @param {number} [props.zoom=3] - The initial zoom level of the map.
+ * @returns {JSX.Element} The rendered Map component.
+ */
 function SimpleMap({ zoom = 3 }) {
   const [allCountriesLatLang, setAllCountriesLatLang] = useState([])
 

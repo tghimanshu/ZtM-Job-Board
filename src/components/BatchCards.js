@@ -2,9 +2,21 @@ import React, { useState } from "react"
 import CardList from "./CardList"
 import BasicButton from "./BasicButton"
 
+/**
+ * Displays a list of cards in batches.
+ * Allows loading more cards via a "Show More" button.
+ *
+ * @param {Object} props - The component props.
+ * @param {Array<Object>} props.persons - The array of person objects to display.
+ * @param {number} [props.numberPerBatch=16] - The number of cards to show per batch.
+ * @returns {JSX.Element} The rendered BatchCards component.
+ */
 const BatchCards = ({ persons, numberPerBatch = 16 }) => {
   const [batch, setBatch] = useState(1)
 
+  /**
+   * Increments the batch count to show more cards.
+   */
   const addToBatch = () => {
     if (persons.length > batch * numberPerBatch) {
       setBatch(batch + 1)

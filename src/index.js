@@ -6,6 +6,11 @@ import "tachyons"
 import "./index.css"
 import registerServiceWorker from "./registerServiceWorker"
 
+/**
+ * Entry point of the application.
+ * Loads web fonts, renders the App component into the DOM, and registers the service worker.
+ */
+
 WebFont.load({
   google: {
     // families: ["Roboto Condensed:300,400,700", "sans-serif"]

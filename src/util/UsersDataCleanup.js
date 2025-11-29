@@ -5,6 +5,13 @@ TO MAKE FETCH REQUESTS FOR COUNTRIES AND COORDINATES
 import { people } from "../assets/persons"
 
 // Removed all the brackets, extra spaces, symbols and unnecessary stuff from country names
+/**
+ * An array of country names cleaned from the `people` data.
+ * It removes brackets, non-alphabetic characters (except for specific latin characters),
+ * and extra whitespaces.
+ *
+ * @type {string[]}
+ */
 const allCountryNamesCleaned = people.map(person => {
   return (
     person.location.country
@@ -26,6 +33,12 @@ const allCountryNamesCleaned = people.map(person => {
 
 // This will contain duplicate country names
 // that are removed in the next function - removeDuplicateCountryNames
+/**
+ * An array of country names normalized to match API naming conventions.
+ * It maps common variations and abbreviations to standard country names.
+ *
+ * @type {string[]}
+ */
 const allCountryNamesFixedToMatchAPINames = allCountryNamesCleaned.map(
   country => {
     switch (country) {
@@ -66,6 +79,12 @@ const allCountryNamesFixedToMatchAPINames = allCountryNamesCleaned.map(
 // This function will return an object with country name and the number of developers from that country
 // It adds the number of developers as it comes across duplicate country names
 
+/**
+ * Counts the occurrences of each country name in an array.
+ *
+ * @param {string[]} countryArrayWithDuplicateValues - An array of country names, potentially containing duplicates.
+ * @returns {Object.<string, number>} An object where keys are country names and values are the count of developers from that country.
+ */
 function removeDuplicateCountryNames(countryArrayWithDuplicateValues) {
   let deduplicatedCountries = countryArrayWithDuplicateValues.reduce(
     (prev, curr) => {
@@ -78,6 +97,13 @@ function removeDuplicateCountryNames(countryArrayWithDuplicateValues) {
 
   return deduplicatedCountries
 }
+
+/**
+ * An object containing normalized country names as keys and the number of developers from each country as values.
+ * Derived from the `people` data in `../assets/persons`.
+ *
+ * @type {Object.<string, number>}
+ */
 export const countriesWithNumOfDevsObj = removeDuplicateCountryNames(
   allCountryNamesFixedToMatchAPINames
 )

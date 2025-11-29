@@ -2,6 +2,15 @@
 //algorithm works by picking one random element for each original array element, and then //excluding it from the next draw. swapping the picked element with the current element, ///and then picking the next random element from the remainder.
 //note: shuffle function is not pure function, it mutates original array
 //in order to avoid memory duplication
+
+/**
+ * Shuffles an array in place using the Durstenfeld shuffle algorithm (an optimized version of Fisher-Yates).
+ *
+ * Note: This function is not pure; it mutates the original array to avoid memory duplication.
+ *
+ * @param {Array} array - The array to be shuffled.
+ * @returns {number} The length of the array.
+ */
 export const shuffle = (array) => {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
